@@ -1,0 +1,653 @@
+# 01 — Representação do Processo
+
+O processo possui uma corrente de alimentação e duas correntes de saída.
+                         ┌──────────────────────┐
+                         │                      │
+ Alimentação F = ? ────► │   UNIDADE DE        │ ────► Corrente 1
+ H₂O = 60%               │     PROCESSO        │       F1 = 500 kg/h
+ EtOH = 25%              │                      │       Composição = ?
+ MeOH = 15%              │                      │
+                         └──────────────────────┘
+                                      │
+                                      ▼
+                                Corrente 2
+                                F2 = ?
+                                H₂O = 30%
+                                EtOH = 40%
+                                MeOH = 30%
+-----------------------------------------------------------------------------------------------------------------------------
+
+**Informações conhecidas:**
+
+* Alimentação: composição conhecida;
+* Corrente 1: vazão = 500 kg/h;
+* Corrente 2: composição conhecida;
+* Vazão da alimentação: desconhecida;
+* Composição da Corrente 1: desconhecida;
+* Vazão da Corrente 2: desconhecida.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 02 — Identificação das Variáveis
+
+## Variáveis conhecidas
+
+| Variável       |    Valor |
+| -------------- | -------: |
+| \(w_{H_2O,F}\) |      60% |
+| \(w_{EtOH,F}\) |      25% |
+| \(w_{MeOH,F}\) |      15% |
+| \(F_1\)        | 500 kg/h |
+| \(w_{H_2O,2}\) |      30% |
+| \(w_{EtOH,2}\) |      40% |
+| \(w_{MeOH,2}\) |      30% |
+
+## Variáveis desconhecidas
+
+* Vazão da alimentação \(F\);
+* Vazão da Corrente 2 \(F_2\);
+* composição da Corrente 1.
+
+Como:
+
+$$
+w_{H_2O,1}+w_{EtOH,1}+w_{MeOH,1}=1
+$$
+
+somente duas das três frações da Corrente 1 são independentes.
+
+Podemos considerar:
+
+$$
+\boxed{F,\ F_2,\ w_{H_2O,1},\ w_{EtOH,1}}
+$$
+
+Portanto:
+
+$$
+\boxed{4\text{ incógnitas independentes}}
+$$
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 03 — Relações Físicas
+
+Como não há reação química nem acúmulo de massa:
+
+$$
+\boxed{\text{Entrada}=\text{Saída}}
+$$
+
+### Balanço global
+
+$$
+F=F_1+F_2
+$$
+
+Como \(F_1=500\) kg/h:
+
+$$
+F=500+F_2
+$$
+
+### Balanço de água
+
+$$
+0,60F=500w_{H_2O,1}+0,30F_2
+$$
+
+### Balanço de etanol
+
+$$
+0,25F=500w_{EtOH,1}+0,40F_2
+$$
+
+### Balanço de metanol
+
+$$
+0,15F=500w_{MeOH,1}+0,30F_2
+$$
+
+### Soma das frações da Corrente 1
+
+$$
+w_{H_2O,1}+w_{EtOH,1}+w_{MeOH,1}=1
+$$
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 04 — Grau de Liberdade Inicial
+
+Temos:
+
+$$
+N_I=4
+$$
+
+incógnitas independentes.
+
+As equações independentes podem ser consideradas:
+
+1. balanço global;
+2. balanço de água;
+3. balanço de etanol.
+
+Logo:
+
+$$
+N_E=3
+$$
+
+Aplicando:
+
+$$
+GL=N_I-N_E
+$$
+
+$$
+GL=4-3
+$$
+
+$$
+\boxed{GL=1}
+$$
+
+### Interpretação
+
+O sistema possui um grau de liberdade positivo.
+
+Portanto:
+
+$$
+\boxed{\text{Problema SUBDETERMINADO}}
+$$
+
+Isso significa que **as informações fornecidas inicialmente não são suficientes para determinar completamente o processo**.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 05 — Diagnóstico
+
+Com \(GL=1\), existe uma informação independente faltando.
+
+Não é possível determinar simultaneamente:
+
+* a vazão da alimentação;
+* a vazão da Corrente 2;
+* a composição completa da Corrente 1.
+
+É necessário fornecer **pelo menos uma informação adicional independente**.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 06 — Proposta da Equipe
+
+Uma informação adicional adequada seria:
+
+$$
+\boxed{\text{Vazão total da alimentação}}
+$$
+
+Por exemplo:
+
+$$
+F=2000\text{ kg/h}
+$$
+
+Essa informação permite determinar imediatamente a vazão da Corrente 2 pelo balanço global.
+
+Entretanto, é importante observar que a nova informação precisa ser compatível com os demais dados.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 07 — Nova Informação: Vazão da Alimentação
+
+Agora:
+
+$$
+\boxed{F=2000\text{ kg/h}}
+$$
+
+Pelo balanço global:
+
+$$
+2000=500+F_2
+$$
+
+Logo:
+
+$$
+\boxed{F_2=1500\text{ kg/h}}
+$$
+
+Após essa informação, as vazões das duas correntes estão determinadas.
+
+A composição da Corrente 1 ainda precisa ser obtida por meio dos balanços por componente.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 08 — Grau de Liberdade Após \(F=2000\) kg/h
+
+As incógnitas restantes são as duas frações independentes da Corrente 1:
+
+$$
+w_{H_2O,1}
+$$
+
+e
+
+$$
+w_{EtOH,1}
+$$
+
+Portanto:
+
+$$
+N_I=2
+$$
+
+Temos dois balanços independentes de componentes.
+
+$$
+N_E=2
+$$
+
+Assim:
+
+$$
+GL=2-2
+$$
+
+$$
+\boxed{GL=0}
+$$
+
+### Classificação
+
+Matematicamente, o sistema está:
+
+$$
+\boxed{\text{DETERMINADO}}
+$$
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 09 — Nova Informação: 50% de Água na Corrente 1
+
+A equipe recebe:
+
+$$
+\boxed{w_{H_2O,1}=50\%}
+$$
+
+Agora:
+
+$$
+F=2000\text{ kg/h}
+$$
+
+$$
+F_1=500\text{ kg/h}
+$$
+
+$$
+F_2=1500\text{ kg/h}
+$$
+
+e:
+
+$$
+w_{H_2O,1}=0,50
+$$
+
+A partir daqui, devemos verificar se essa informação é **fisicamente compatível** com os demais dados.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 10 — Balanço de Água
+
+Água na alimentação:
+
+$$
+2000(0,60)=1200\text{ kg/h}
+$$
+
+Água na Corrente 1:
+
+$$
+500(0,50)=250\text{ kg/h}
+$$
+
+Água na Corrente 2:
+
+$$
+1500(0,30)=450\text{ kg/h}
+$$
+
+Portanto, a massa de água que sai seria:
+
+$$
+250+450=700\text{ kg/h}
+$$
+
+Mas entram:
+
+$$
+1200\text{ kg/h}
+$$
+
+Logo:
+
+$$
+1200\neq700
+$$
+
+Existe uma diferença de:
+
+$$
+\boxed{500\text{ kg/h de água}}
+$$
+
+Portanto, as informações são incompatíveis.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 11 — Balanço de Etanol
+
+Etanol na alimentação:
+
+$$
+2000(0,25)=500\text{ kg/h}
+$$
+
+Etanol na Corrente 2:
+
+$$
+1500(0,40)=600\text{ kg/h}
+$$
+
+Pelo balanço:
+
+$$
+500=500w_{EtOH,1}+600
+$$
+
+$$
+500w_{EtOH,1}=-100
+$$
+
+Logo:
+
+$$
+\boxed{w_{EtOH,1}=-20\%}
+$$
+
+Esse resultado é fisicamente impossível, pois uma composição mássica não pode ser negativa.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 12 — Balanço de Metanol
+
+Metanol na alimentação:
+
+$$
+2000(0,15)=300\text{ kg/h}
+$$
+
+Metanol na Corrente 2:
+
+$$
+1500(0,30)=450\text{ kg/h}
+$$
+
+Pelo balanço:
+
+$$
+300=500w_{MeOH,1}+450
+$$
+
+$$
+500w_{MeOH,1}=-150
+$$
+
+Logo:
+
+$$
+\boxed{w_{MeOH,1}=-30\%}
+$$
+
+Novamente, temos uma composição fisicamente impossível.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 13 — Diagnóstico da Inconsistência
+
+O balanço global apresenta:
+
+$$
+2000=500+1500
+$$
+
+Portanto, o **balanço global fecha**.
+
+Entretanto, os balanços por componente não fecham.
+
+| Componente |   Entrada |     Saída | Situação |
+| ---------- | --------: | --------: | -------- |
+| Água       | 1200 kg/h |  700 kg/h | ❌        |
+| Etanol     |  500 kg/h | 1100 kg/h | ❌        |
+| Metanol    |  300 kg/h |  700 kg/h | ❌        |
+
+Portanto:
+
+$$
+\boxed{\text{Os dados são fisicamente inconsistentes}}
+$$
+
+O problema demonstra uma diferença importante:
+
+> **Ter grau de liberdade igual a zero não garante que os dados sejam fisicamente compatíveis.**
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 14 — Classificação do Problema
+
+| Situação                           |        Grau de liberdade | Classificação                   |
+| ---------------------------------- | -----------------------: | ------------------------------- |
+| Informações iniciais               |                 \(GL=1\) | **Subdeterminado**              |
+| Após informar \(F=2000\) kg/h      |                 \(GL=0\) | **Determinado matematicamente** |
+| Após adicionar \(w_{H_2O,1}=50\%\) | Verificação dos balanços | **Fisicamente inconsistente**   |
+
+Portanto, é necessário analisar tanto:
+
+$$
+\boxed{\text{Grau de liberdade}}
+$$
+
+quanto:
+
+$$
+\boxed{\text{Consistência física}}
+$$
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 15 — Verificação da Consistência
+
+Para que uma solução seja fisicamente aceitável:
+
+### Balanço global
+
+$$
+\text{Entrada}=\text{Saída}
+$$
+
+### Balanço por componente
+
+$$
+\text{Entrada do componente}
+=
+\text{Saída do componente}
+$$
+
+### Composição
+
+Todas as frações devem satisfazer:
+
+$$
+0\leq w_i\leq1
+$$
+
+e:
+
+$$
+\sum w_i=1
+$$
+
+Neste caso, aparecem valores negativos para a composição de etanol e metanol.
+
+Logo:
+
+$$
+\boxed{\text{A solução não é fisicamente aceitável}}
+$$
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 16 — Estratégia Correta de Resolução
+
+A estratégia de engenharia deve seguir a sequência:
+
+$$
+\boxed{
+\text{Interpretar}
+\rightarrow
+\text{Identificar variáveis}
+\rightarrow
+\text{Definir equações}
+\rightarrow
+\text{Calcular GL}
+\rightarrow
+\text{Diagnosticar}
+\rightarrow
+\text{Resolver}
+\rightarrow
+\text{Validar}
+}
+$$
+
+Não devemos começar diretamente substituindo números nas equações.
+
+Primeiro é necessário entender **se o problema pode ser resolvido**.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 17 — Reflexão
+
+### 1. Por que não é adequado começar os cálculos imediatamente?
+
+Porque podemos tentar resolver um sistema que possui informações insuficientes ou inconsistentes.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+### 2. Qual foi a principal dificuldade na identificação das incógnitas?
+
+A composição possui três componentes, mas somente duas frações são independentes, pois:
+
+$$
+w_{H_2O}+w_{EtOH}+w_{MeOH}=1
+$$
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+### 3. Por que o grau de liberdade é importante?
+
+Porque permite verificar se o número de informações independentes é suficiente para determinar as incógnitas do modelo.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+### 4. Qual informação foi necessária?
+
+A vazão da alimentação foi necessária para reduzir o grau de liberdade inicial de 1 para 0.
+
+Entretanto, essa informação precisa ser acompanhada de dados fisicamente compatíveis.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+### 5. É possível obter uma resposta matemática e ter um modelo fisicamente inconsistente?
+
+Sim.
+
+Neste problema, surgiram valores como:
+
+$$
+w_{EtOH,1}=-20\%
+$$
+
+e:
+
+$$
+w_{MeOH,1}=-30\%
+$$
+
+Matematicamente são resultados das equações, mas fisicamente são impossíveis.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+### 6. Como o grau de liberdade ajuda um engenheiro?
+
+Ele permite avaliar previamente se um modelo possui informações suficientes para ser resolvido, reduzindo erros e evitando cálculos desnecessários.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+# 🏁 Conclusão Final
+
+O PBL demonstra que a resolução de um problema de engenharia deve ser feita em etapas.
+
+Inicialmente:
+
+$$
+\boxed{GL=1}
+$$
+
+Portanto, o problema é:
+
+$$
+\boxed{\text{SUBDETERMINADO}}
+$$
+
+Após informar a vazão da alimentação:
+
+$$
+\boxed{F=2000\text{ kg/h}}
+$$
+
+o sistema passa a apresentar:
+
+$$
+\boxed{GL=0}
+$$
+
+e fica matematicamente determinado.
+
+Entretanto, ao considerar:
+
+$$
+\boxed{w_{H_2O,1}=50\%}
+$$
+
+os balanços por componente revelam que os dados são **fisicamente inconsistentes**, pois resultam em composições negativas.
+
+Assim, a principal conclusão é:
+
+> O grau de liberdade informa se temos equações suficientes para resolver o modelo, mas somente a validação dos balanços e das restrições físicas confirma se a solução é realmente possível.**
+
+$$
+\boxed{
+\text{GL adequado}
+\neq
+\text{garantia de solução física}
+}
+$$
+
+A análise completa deve sempre combinar **grau de liberdade + balanços de massa + verificação de consistência física**.
